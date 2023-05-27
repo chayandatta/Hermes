@@ -1,5 +1,7 @@
 # Hermes
 
+Building An Interpreter from Scratch in Golang and written using NeoVim.
+
 Hermes, the messenger of the gods, is often associated with communication, 
 language, and interpretation. He is known as a guide, translator, and mediator 
 between realms. His attributes can be linked to interpretation, especially in 

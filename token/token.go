@@ -62,10 +62,9 @@ var keywords = map[string]TokenType{
 	"return": RETURN,
 }
 
-func LookupIdentifierType(identifier string) TokenType{
-    if token, ok := keywords[identifier]; ok {
-        return token
-    }
-    return IDENTIFIER
+func LookupIdentifierType(identifier string) TokenType {
+	if token, ok := keywords[identifier]; ok {
+		return token
+	}
+	return IDENTIFIER
 }
-
