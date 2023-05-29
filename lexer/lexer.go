@@ -35,6 +35,8 @@ func (lex *Lexer) NextToken() token.Token {
 		tok = newToken(token.ASSIGNMENT, lex.currentCharacter)
 	case ';':
 		tok = newToken(token.SEMICOLON, lex.currentCharacter)
+	case ':':
+		tok = newToken(token.COLON, lex.currentCharacter)
 	case '(':
 		tok = newToken(token.LEFT_PARENTHESIS, lex.currentCharacter)
 	case ')':
@@ -43,10 +45,26 @@ func (lex *Lexer) NextToken() token.Token {
 		tok = newToken(token.COMMA, lex.currentCharacter)
 	case '+':
 		tok = newToken(token.PLUS, lex.currentCharacter)
+	case '-':
+		tok = newToken(token.MINUS, lex.currentCharacter)
+	case '!':
+		tok = newToken(token.BANG, lex.currentCharacter)
+	case '*':
+		tok = newToken(token.ASTERISK, lex.currentCharacter)
+	case '/':
+		tok = newToken(token.SLASH, lex.currentCharacter)
 	case '{':
 		tok = newToken(token.LEFT_BRACES, lex.currentCharacter)
 	case '}':
 		tok = newToken(token.RIGHT_BRACES, lex.currentCharacter)
+	case '[':
+		tok = newToken(token.LEFT_BRACKET, lex.currentCharacter)
+	case ']':
+		tok = newToken(token.RIGHT_BRACKET, lex.currentCharacter)
+	case '<':
+		tok = newToken(token.LESS_THAN, lex.currentCharacter)
+	case '>':
+		tok = newToken(token.GREATER_THAN, lex.currentCharacter)
 	case 0:
 		tok.Literal = ""
 		tok.Type = token.EOF
