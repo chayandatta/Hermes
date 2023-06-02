@@ -7,25 +7,59 @@ import (
 )
 
 func TestNextToken(t *testing.T) {
-	input := `=+(){},1;`
+	input := `
+        let five = 5;
+        let ten = 10;
+
+        let add = fn(x, y) {
+            x+y;
+        }
+
+        let result = add(five, ten);
+        `
 
 	tests := []struct {
 		expectedType    token.TokenType
 		expectedLiteral string
 	}{
-		{token.ASSIGNMENT, "="},
-		{token.PLUS, "+"},
-		{token.LEFT_PARENTHESIS, "("},
-		{token.RIGHT_PARENTHESIS, ")"},
-		{token.LEFT_BRACES, "{"},
-		{token.RIGHT_BRACES, "}"},
-		{token.LEFT_BRACKET, "["},
-		{token.RIGHT_BRACKET, "]"},
-		{token.COMMA, ","},
-		{token.INT, "1"},
+		{token.LET, "let"},
+		{token.IDENTIFIER, "five"},
+		{token.EQUAL, "="},
+		{token.INT, "5"},
 		{token.SEMICOLON, ";"},
-		{token.EOF, "EOF"},
-	}
+		{token.LET, "let"},
+		{token.IDENTIFIER, "ten"},
+		{token.EQUAL, "="},
+		{token.INT, "10"},
+		{token.SEMICOLON, ";"},
+		{token.LET, "let"},
+		{token.IDENTIFIER, "add"},
+		{token.EQUAL, "="},
+		{token.FUNCTION, "fn"},
+		{token.LEFT_PARENTHESIS, "("},
+		{token.IDENTIFIER, "x"},
+        {token.COMMA, ","},
+        {token.IDENTIFIER, "y"},
+        {token.RIGHT_PARENTHESIS, ")"},
+        {token.LEFT_BRACES, "{"},
+        {token.IDENTIFIER, "x"},
+        {token.PLUS, "+"},
+        {token.IDENTIFIER, "y"},
+        {token.SEMICOLON, ";"},
+        {token.RIGHT_PARENTHESIS, "}"},
+        {token.SEMICOLON, ";"},
+        {token.LET, "let"},
+        {token.IDENTIFIER, "result"},
+        {token.EQUAL, "="},
+        {token.IDENTIFIER, "add"},
+        {token.LEFT_BRACKET, "("},
+        {token.IDENTIFIER, "five"},
+        {token.COMMA, ","},
+        {token.IDENTIFIER, "ten"},
+        {token.RIGHT_PARENTHESIS, ")"},
+        {token.SEMICOLON, ";"},
+        {token.EOF, ""},
+    }
 
 	l := New(input)
 
