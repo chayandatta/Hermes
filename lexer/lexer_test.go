@@ -13,7 +13,7 @@ func TestNextToken(t *testing.T) {
 
         let add = fn(x, y) {
             x+y;
-        }
+        };
 
         let result = add(five, ten);
         `
@@ -38,28 +38,28 @@ func TestNextToken(t *testing.T) {
 		{token.FUNCTION, "fn"},
 		{token.LEFT_PARENTHESIS, "("},
 		{token.IDENTIFIER, "x"},
-        {token.COMMA, ","},
-        {token.IDENTIFIER, "y"},
-        {token.RIGHT_PARENTHESIS, ")"},
-        {token.LEFT_BRACES, "{"},
-        {token.IDENTIFIER, "x"},
-        {token.PLUS, "+"},
-        {token.IDENTIFIER, "y"},
-        {token.SEMICOLON, ";"},
-        {token.RIGHT_PARENTHESIS, "}"},
-        {token.SEMICOLON, ";"},
-        {token.LET, "let"},
-        {token.IDENTIFIER, "result"},
-        {token.EQUAL, "="},
-        {token.IDENTIFIER, "add"},
-        {token.LEFT_BRACKET, "("},
-        {token.IDENTIFIER, "five"},
-        {token.COMMA, ","},
-        {token.IDENTIFIER, "ten"},
-        {token.RIGHT_PARENTHESIS, ")"},
-        {token.SEMICOLON, ";"},
-        {token.EOF, ""},
-    }
+		{token.COMMA, ","},
+		{token.IDENTIFIER, "y"},
+		{token.RIGHT_PARENTHESIS, ")"},
+		{token.LEFT_BRACES, "{"},
+		{token.IDENTIFIER, "x"},
+		{token.PLUS, "+"},
+		{token.IDENTIFIER, "y"},
+		{token.SEMICOLON, ";"},
+		{token.RIGHT_PARENTHESIS, "}"},
+		{token.SEMICOLON, ";"},
+		{token.LET, "let"},
+		{token.IDENTIFIER, "result"},
+		{token.EQUAL, "="},
+		{token.IDENTIFIER, "add"},
+		{token.LEFT_BRACKET, "("},
+		{token.IDENTIFIER, "five"},
+		{token.COMMA, ","},
+		{token.IDENTIFIER, "ten"},
+		{token.RIGHT_PARENTHESIS, ")"},
+		{token.SEMICOLON, ";"},
+		{token.EOF, ""},
+	}
 
 	l := New(input)
 
