@@ -23,7 +23,7 @@ const (
 	BANG       = "!"
 	ASTERISK   = "*"
 	SLASH      = "/"
-	EQUAL      = "="
+	EQUAL      = "=="
 	NOT_EQUAL  = "!="
 
 	LESS_THAN    = "<"
