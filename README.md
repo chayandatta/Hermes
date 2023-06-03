@@ -10,4 +10,4 @@ the context of language and communication.
 ---
 
 ### lexing
-![image](https://github.com/chayandatta/Hermes/assets/32599474/e568f4e4-8722-4433-92e6-5f776b674198)
+![image](https://github.com/chayandatta/Hermes/assets/32599474/48d3b44c-e35b-4584-aefa-ddec20bc15df)
