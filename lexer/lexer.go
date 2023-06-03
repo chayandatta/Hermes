@@ -34,7 +34,13 @@ func (lex *Lexer) NextToken() token.Token {
 
 	switch lex.currentCharacter {
 	case '=':
-		tok = newToken(token.ASSIGNMENT, lex.currentCharacter)
+		if lex.peekChar() == '=' {
+			ch := lex.currentCharacter
+			lex.readCharacter()
+			tok = token.Token{Type: token.EQUAL, Literal: string(ch) + string(lex.currentCharacter)}
+		} else {
+			tok = newToken(token.ASSIGNMENT, lex.currentCharacter)
+		}
 	case ';':
 		tok = newToken(token.SEMICOLON, lex.currentCharacter)
 	case ':':
@@ -120,4 +126,12 @@ func (l *Lexer) readNumber() string {
 
 func isDigit(ch byte) bool {
 	return '0' <= ch && ch <= '9'
+}
+
+func (l *Lexer) peekChar() byte {
+	if l.readingPosition >= len(l.input) {
+		return 0
+	} else {
+		return l.input[l.readingPosition]
+	}
 }
