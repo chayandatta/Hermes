@@ -24,3 +24,9 @@ Lexing, also known as lexical analysis, is the initial phase of processing in a 
 Read-Eval-Print Loop
 
 <img width="630" alt="image" src="https://github.com/chayandatta/Hermes/assets/32599474/007662e4-ccfc-41a3-bcf4-223062269b40">
+
+### AST
+Abstract Syntax Tree
+
+<img width="1227" alt="image" src="https://github.com/chayandatta/Hermes/assets/32599474/aa26e2b8-0218-434e-b64d-2227a7242bb3">
+
